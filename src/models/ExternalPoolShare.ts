@@ -1,5 +1,4 @@
 import { IsString, Matches, MaxLength } from 'class-validator';
-import { Transform } from 'class-transformer';
 import { IsBitcoinAddress } from './validators/bitcoin-address.validator';
 
 export class ExternalPoolShare {
@@ -20,8 +19,8 @@ export class ExternalPoolShare {
   externalPoolName: string;
 
   @IsString()
-  @Matches(/^[0-9a-fA-F]+$/, { 
-    message: 'Header must be a valid hex string'
+  @Matches(/^[0-9a-fA-F]+$/, {
+    message: 'Header must be a valid hex string',
   })
   header: string;
 }
